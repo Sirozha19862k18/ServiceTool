@@ -1,0 +1,28 @@
+insert into position
+(position) 
+VALUES ('Слесарь МСР'), ('Начальник отдела сервиса'), ('кладовщик'),VALUES ('Водитель'), ('Сварщик');
+
+insert into employers
+(employer_name, position_id) 
+VALUES ('Бохан А.А.', '1'), ('Кушнер С.В.', '2'),('Чайко С.В.', '5');
+
+insert into region 
+(region_name)
+VALUES('Минская'),('Брестская'), ('Гродненская'), ('Витебская'), ('Гомельская'), ('Могилевская');
+
+insert into client
+(client_name, region_id, adress)
+VALUES('СПК Гудогай', '3', ' 222220 Гродненская область п. Осровец'), ('СПК Гигант', '6', ' 222220 Могилевская область, бобруйский район');
+
+insert into auto
+(auto_model, auto_number, auto_build)
+VALUES('VW CADDY', '7270АВ-5', '2017'), ('Mercedes Sprinter', '2222АВ-5', '2015')
+
+insert into material
+(material)
+VALUES('Подшипник NU230'), ('Мотор-редуктор');
+
+insert into product
+(product_name, product_builddate, partnumber)
+VALUES('Установка 4400Ф', '2019', '201914');
+

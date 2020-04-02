@@ -1,0 +1,24 @@
+ALTER TABLE client
+ADD FOREIGN KEY (region_id)
+REFERENCES region (region_id);
+
+ALTER TABLE employers
+ADD FOREIGN KEY (position_id)
+REFERENCES position (position_id);
+
+ALTER TABLE incident
+ADD FOREIGN KEY (client_id)
+REFERENCES client (client_id);
+
+ALTER TABLE incident
+ADD FOREIGN KEY (product_id)
+REFERENCES product (product_id);
+
+ALTER TABLE protocol
+ADD FOREIGN KEY (incident_id)
+REFERENCES incident (incident_id),
+ADD FOREIGN KEY (material_id)
+REFERENCES material (material_id),
+ADD FOREIGN KEY (auto_id)
+REFERENCES auto (auto_id)
+
