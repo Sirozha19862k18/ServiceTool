@@ -1,7 +1,6 @@
 package dao;
 
 import Models.Client;
-import Models.Position;
 import Models.Region;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -10,12 +9,15 @@ import utils.HibernateSessionFactoryUtil;
 import java.util.List;
 
 public class clientDAOImpl implements ClientDAO {
+
+    //Показать всех клиентов в базе
     @Override
     public List<Client> showAllClients() {
        return null;
 
     }
 
+    //Показать все области в базе
     @Override
     public List<Region> showAllRegions() {
         List<Region> region = (List<Region>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Region").list();
@@ -27,6 +29,7 @@ public class clientDAOImpl implements ClientDAO {
 
     }
 
+    //Добавление области
     @Override
     public void addNewRegion(Region region) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
@@ -36,11 +39,13 @@ public class clientDAOImpl implements ClientDAO {
         session.close();
     }
 
+    //Поиск области
     @Override
     public List<Region> searchRegionByName(String regionName) {
         return null;
     }
 
+    //Удаление области
     @Override
     public void deleteRegion(Region region) {
         Session session=HibernateSessionFactoryUtil.getSessionFactory().openSession();
@@ -51,6 +56,7 @@ public class clientDAOImpl implements ClientDAO {
 
     }
 
+    //Удаление клиента
     @Override
     public void deleteClient(Client client) {
 

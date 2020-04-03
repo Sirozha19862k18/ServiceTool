@@ -1,6 +1,6 @@
 package GUI;
 
-import Models.Position;
+
 import Models.Region;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import service.ClientService;
-import service.EmployerService;
+
 
 
 import java.util.List;

@@ -4,7 +4,6 @@ import Models.Employer;
 import Models.Position;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 import utils.HibernateSessionFactoryUtil;
 import java.util.List;
 
@@ -23,6 +22,7 @@ public class EmployerDAOImpl implements EmployerDAO {
         return position;
     }
 
+    //Добавление новой профессии
     @Override
     public void addNewPosition(Position position) {
        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
@@ -32,6 +32,8 @@ public class EmployerDAOImpl implements EmployerDAO {
        session.close();
     }
 
+    //Добавление нового работника
+    @Override
     public void addNewEmployer(Employer employer) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
