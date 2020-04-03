@@ -28,4 +28,22 @@ public class Controller {
         stage.setScene(new Scene(root, 768, 600));
         stage.show();
     }
+
+    public void MenuShowAllRegion(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/regionWindow.fxml"));
+        Parent root = loader.load();
+        Stage stage=new Stage();
+        stage.setTitle("Список регионов");
+        stage.setScene(new Scene(root, 768, 600));
+        stage.show();
+    }
+
+    public void MenuShowAllClient(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/clientWindow.fxml"));
+        Parent root = loader.load();
+        Stage stage=new Stage();
+        stage.setTitle("Список клиентов");
+        stage.setScene(new Scene(root, 768, 600));
+        stage.show();
+    }
 }

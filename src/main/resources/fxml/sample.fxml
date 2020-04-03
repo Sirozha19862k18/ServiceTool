@@ -12,6 +12,8 @@
              <Menu text="Справочник">
                  <MenuItem fx:id="MenuItemShowEmployers" onAction="#MenuShowAllEmployers" text="Работники" />
                  <MenuItem fx:id="MenuItemShowPosition" onAction="#MenuShowAllPosition" text="Должности" />
+                 <MenuItem fx:id="MenuItemShowRegion" onAction="#MenuShowAllRegion" text="Регионы" />
+                 <MenuItem fx:id="MenuItemShowClient" onAction="#MenuShowAllClient" text="Клиенты" />
              </Menu>
       </MenuBar>
       </children>
