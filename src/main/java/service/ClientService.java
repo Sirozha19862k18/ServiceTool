@@ -12,4 +12,8 @@ public class ClientService {
     public ClientService(){}
 
     public List<Region> showAllRegions (){return  model.showAllRegions();}
+
+    public void addNewRegion(Region region){model.addNewRegion(region);}
+
+    public void deleteRegion(Region region) {model.deleteRegion(region);}
 }

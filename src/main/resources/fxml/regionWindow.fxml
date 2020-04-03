@@ -40,7 +40,7 @@
          <TableView fx:id="table" prefHeight="500.0" prefWidth="875.0">
            <columns>
              <TableColumn fx:id="tableId" prefWidth="68.0" text="id" />
-             <TableColumn fx:id="tablePosition" prefWidth="680" text="Регион" />
+             <TableColumn fx:id="tableRegion" prefWidth="680" text="Регион" />
            </columns>
          </TableView>
             <padding>

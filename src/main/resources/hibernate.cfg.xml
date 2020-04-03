@@ -10,5 +10,7 @@
         <property name="hbm2ddl.auto">update</property>
         <mapping class="Models.Employer" />
         <mapping class="Models.Position" />
+        <mapping class="Models.Region" />
+        <mapping class="Models.Client" />
     </session-factory>
 </hibernate-configuration>

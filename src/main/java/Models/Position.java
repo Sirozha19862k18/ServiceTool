@@ -9,6 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "position")
+
 public class Position extends EmployerDAOImpl {
 
     @Id

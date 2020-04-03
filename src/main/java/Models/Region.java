@@ -55,4 +55,9 @@ public class Region extends EmployerDAOImpl {
     public void setClient(List<Client> client) {
         this.client = client;
     }
+
+    @Override
+    public String toString() {
+        return regionName;
+    }
 }
