@@ -23,10 +23,10 @@ public class Employer {
     public Employer(){
     }
 
-    public Employer(int employer_id, String employer_name){
+ /*   public Employer(int employer_id, String employer_name){
         this.employer_id=employer_id;
         this.employer_name=employer_name;
-    }
+    }*/
 
     public int getEmployer_id() {
         return employer_id;
