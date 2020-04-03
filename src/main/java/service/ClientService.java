@@ -1,5 +1,6 @@
 package service;
 
+import Models.Client;
 import Models.Region;
 import dao.clientDAOImpl;
 
@@ -16,4 +17,6 @@ public class ClientService {
     public void addNewRegion(Region region){model.addNewRegion(region);}
 
     public void deleteRegion(Region region) {model.deleteRegion(region);}
+
+    public List<Client> showAllClients(){return model.showAllClients();}
 }
