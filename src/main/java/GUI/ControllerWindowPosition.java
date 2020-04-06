@@ -46,12 +46,9 @@ public class ControllerWindowPosition {
 
     //кнопка удалить выбранную профессию
     public void deleteSelectedPosition(MouseEvent mouseEvent) {
-
-        int id = Integer.valueOf(tableId.getCellObservableValue(table.getSelectionModel().getSelectedIndex()).getValue().toString());  //получание значения с ячейки id
         String positionName = String.valueOf(table.getSelectionModel().getSelectedItem());
-        System.out.println(id);
         Position positionToDelete = new Position();
-        positionToDelete.setId(id);
+        positionToDelete.setId(Integer.valueOf(tableId.getCellObservableValue(table.getSelectionModel().getSelectedIndex()).getValue().toString()));
         positionToDelete.setPosition(positionName);
         EmployerService servise = new EmployerService();
         servise.deletePosition(positionToDelete);
