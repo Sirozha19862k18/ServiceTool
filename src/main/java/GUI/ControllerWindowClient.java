@@ -1,19 +1,21 @@
 package GUI;
 
 import Models.Client;
-import Models.Employer;
-import Models.Position;
+import Models.Region;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import service.ClientService;
-import service.EmployerService;
-
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class ControllerWindowClient {
+
+    @FXML
+    Button buttonAddClient;
 
     @FXML
     TextField textFieldClientNameUserInput;
@@ -38,9 +40,21 @@ public class ControllerWindowClient {
     @FXML
     private TableColumn tableClientAdress;
 
+    //действия на чекбоксе Добавить клиента
     public void checkBoxAddClientAction(MouseEvent mouseEvent) {
+        buttonAddClient.setVisible(true);
+        listViewRegionOfClient.getItems().clear();
+        ClientService clientService = new ClientService();
+        List<Region> listOfRegionToSelect = clientService.showAllRegions();
+        List<String> list = new ArrayList<String>();
+        for (int i = 0; i <listOfRegionToSelect.size() ; i++) {
+            list.add(i, listOfRegionToSelect.get(i).getRegionName());
+        }
+        listViewRegionOfClient.setItems(FXCollections.observableList(list));
+        checkBoxAddClient.setSelected(false);
     }
 
+    //действия на кнопке Добавить клиента
     public void buttonAddClientMouseClicked(MouseEvent mouseEvent) {
     }
 
