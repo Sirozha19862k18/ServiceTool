@@ -65,6 +65,10 @@ public class clientDAOImpl implements ClientDAO {
     //Удаление клиента
     @Override
     public void deleteClient(Client client) {
-
+        Session session=HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Transaction tx = session.beginTransaction();
+        session.delete(client);
+        tx.commit();
+        session.close();
     }
 }

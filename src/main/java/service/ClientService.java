@@ -18,6 +18,8 @@ public class ClientService {
 
     public void deleteRegion(Region region) {model.deleteRegion(region);}
 
+    public void deleteClient(Client client) {model.deleteClient(client);}
+
     public List<Client> showAllClients(){return model.showAllClients();}
 
     public List<Region> searchRegionByName(String selectedItem) { return model.searchRegionByName(selectedItem); }

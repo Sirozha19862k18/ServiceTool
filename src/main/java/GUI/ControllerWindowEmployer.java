@@ -81,7 +81,7 @@ public class ControllerWindowEmployer {
         Employer employerToDelete = new Employer();
         employerToDelete.setEmployer_id(id);
         employerToDelete.setEmployer_name(employerName);
-        System.out.println(employerToDelete.getEmployer_id()+ " /  "+ employerToDelete.getEmployer_name());
+      //  System.out.println(employerToDelete.getEmployer_id()+ " /  "+ employerToDelete.getEmployer_name());
         EmployerService service = new EmployerService();
         service.deleteEmployer(employerToDelete);
         showAllEmployer(mouseEvent);

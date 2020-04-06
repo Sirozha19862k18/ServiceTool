@@ -65,7 +65,6 @@ public class ControllerWindowClient {
         ClientService clientService = new ClientService();
         Region region = new Region();
         List<Region> listRegion= clientService.searchRegionByName((String) listViewRegionOfClient.getSelectionModel().getSelectedItem());
-
         region.setRegionId (listRegion.get(0).getRegionId());
         region.setRegionName(listRegion.get(0).getRegionName());
         Client client = new Client();
@@ -92,5 +91,14 @@ public class ControllerWindowClient {
     }
 
     public void deleteSelectedClient(MouseEvent mouseEvent) {
+        int id = Integer.valueOf(tableId.getCellObservableValue(table.getSelectionModel().getSelectedIndex()).getValue().toString());
+        String clientName = String.valueOf(table.getSelectionModel().getSelectedItem());
+        Client clientToDelete = new Client();
+        clientToDelete.setClient_id(id);
+        clientToDelete.setClientName(clientName);
+        //  System.out.println(employerToDelete.getEmployer_id()+ " /  "+ employerToDelete.getEmployer_name());
+        ClientService service = new ClientService();
+        service.deleteClient(clientToDelete);
+        showAllClient(mouseEvent);
     }
 }
