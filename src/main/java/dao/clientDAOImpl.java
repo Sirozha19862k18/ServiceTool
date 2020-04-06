@@ -13,7 +13,7 @@ public class clientDAOImpl implements ClientDAO {
     //Показать всех клиентов в базе
     @Override
     public List<Client> showAllClients() {
-       return (List<Client>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Client").list();
+       return HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Client").list();
 
 
     }
