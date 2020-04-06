@@ -1,7 +1,6 @@
 package dao;
 
 import Models.Client;
-import Models.Position;
 import Models.Region;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -14,16 +13,16 @@ public class clientDAOImpl implements ClientDAO {
     //Показать всех клиентов в базе
     @Override
     public List<Client> showAllClients() {
-       List<Client> client = HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Client").list();
-       return client;
+       return (List<Client>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Client").list();
+
 
     }
 
     //Показать все области в базе
     @Override
     public List<Region> showAllRegions() {
-        List<Region> region = (List<Region>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Region").list();
-        return region;
+        return (List<Region>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Region").list();
+
     }
 
     @Override
@@ -59,7 +58,6 @@ public class clientDAOImpl implements ClientDAO {
         session.delete(region);
         tx.commit();
         session.close();
-
     }
 
     //Удаление клиента

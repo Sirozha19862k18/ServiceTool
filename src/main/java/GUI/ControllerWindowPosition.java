@@ -1,9 +1,7 @@
 package GUI;
 
-import Models.Employer;
+
 import Models.Position;
-import dao.EmployerDAOImpl;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -15,7 +13,7 @@ import java.util.List;
 
 public class ControllerWindowPosition {
     @FXML
-    private TableView table;
+    private TableView<Position> table;
     @FXML
     private TableColumn tableId;
 
