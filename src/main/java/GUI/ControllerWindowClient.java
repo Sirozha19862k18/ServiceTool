@@ -1,13 +1,18 @@
 package GUI;
 
 import Models.Client;
+import Models.Employer;
+import Models.Position;
 import Models.Region;
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import service.ClientService;
+import service.EmployerService;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +45,7 @@ public class ControllerWindowClient {
     @FXML
     private TableColumn tableClientAdress;
 
+
     //действия на чекбоксе Добавить клиента
     public void checkBoxAddClientAction(MouseEvent mouseEvent) {
         buttonAddClient.setVisible(true);
@@ -56,6 +62,18 @@ public class ControllerWindowClient {
 
     //действия на кнопке Добавить клиента
     public void buttonAddClientMouseClicked(MouseEvent mouseEvent) {
+        ClientService clientService = new ClientService();
+        Region region = new Region();
+        List<Region> listRegion= clientService.searchRegionByName((String) listViewRegionOfClient.getSelectionModel().getSelectedItem());
+
+        region.setRegionId (listRegion.get(0).getRegionId());
+        region.setRegionName(listRegion.get(0).getRegionName());
+        Client client = new Client();
+        client.setClientName(textFieldClientNameUserInput.getText());
+        client.setAdress(TextAreaClientAdress.getText());
+        client.setRegion(region);
+        clientService.addNewClient(client);
+        showAllClient(mouseEvent);
     }
 
     //Показать всех клиентов

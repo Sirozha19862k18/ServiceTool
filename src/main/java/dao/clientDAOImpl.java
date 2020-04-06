@@ -1,6 +1,7 @@
 package dao;
 
 import Models.Client;
+import Models.Position;
 import Models.Region;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -27,7 +28,11 @@ public class clientDAOImpl implements ClientDAO {
 
     @Override
     public void addNewClient(Client client) {
-
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Transaction tx = session.beginTransaction();
+        session.save(client);
+        tx.commit();
+        session.close();
     }
 
     //Добавление области
@@ -43,7 +48,7 @@ public class clientDAOImpl implements ClientDAO {
     //Поиск области
     @Override
     public List<Region> searchRegionByName(String regionName) {
-        return null;
+        return (List<Region>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("FROM Region WHERE regionName='"+regionName+"'").list();
     }
 
     //Удаление области

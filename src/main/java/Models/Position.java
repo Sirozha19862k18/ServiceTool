@@ -39,9 +39,6 @@ public class Position extends EmployerDAOImpl {
     public int getId() {
         return id;
     }
-    public int getId(Position position)  {
-         return id;
-    }
 
     public void setId(int id) {
         this.id = id;
