@@ -1,8 +1,6 @@
 package dao;
 
 import Models.Client;
-import Models.Employer;
-import Models.Position;
 import Models.Region;
 
 import java.util.List;
