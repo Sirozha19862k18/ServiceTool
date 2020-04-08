@@ -20,6 +20,7 @@ public class HibernateSessionFactoryUtil {
                 configuration.addAnnotatedClass(Models.Position.class);
                 configuration.addAnnotatedClass(Models.Region.class);
                 configuration.addAnnotatedClass(Models.Client.class);
+                configuration.addAnnotatedClass(Models.Product.class);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
             } catch (HibernateException e) {
