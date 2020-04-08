@@ -1,6 +1,7 @@
 package Models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="product")
@@ -19,5 +20,8 @@ public class Product {
 
     @Column (name = "partnumber")
     private int partNumber;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private List<Incident> incident;
 
 }

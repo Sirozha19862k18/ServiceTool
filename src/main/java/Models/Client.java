@@ -1,6 +1,7 @@
 package Models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "client")
@@ -17,6 +18,9 @@ public class Client {
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "region_id")
     private Region region;
+
+    @OneToMany (mappedBy = "client", cascade = CascadeType.ALL)
+    private List<Incident> incident;
 
     @Column (name = "adress")
     private String adress;

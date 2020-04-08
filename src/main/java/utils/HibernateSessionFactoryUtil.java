@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
+
 public class HibernateSessionFactoryUtil {
     private static SessionFactory sessionFactory;
 
@@ -21,6 +22,7 @@ public class HibernateSessionFactoryUtil {
                 configuration.addAnnotatedClass(Models.Region.class);
                 configuration.addAnnotatedClass(Models.Client.class);
                 configuration.addAnnotatedClass(Models.Product.class);
+                configuration.addAnnotatedClass(Models.Incident.class);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
             } catch (HibernateException e) {

@@ -23,6 +23,7 @@ public class Region extends EmployerDAOImpl {
     @OneToMany(mappedBy = "region", cascade = CascadeType.ALL)
     private List<Client> client;
 
+
     public Region(){
     }
 
