@@ -46,4 +46,13 @@ public class Controller {
         stage.setScene(new Scene(root, 768, 600));
         stage.show();
     }
+
+    public void MenuShowAllProduct(ActionEvent actionEvent) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/productWindow.fxml"));
+        Parent root = loader.load();
+        Stage stage=new Stage();
+        stage.setTitle("Список отгруженных изделий");
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
 }

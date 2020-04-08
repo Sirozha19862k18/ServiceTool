@@ -14,6 +14,7 @@
                  <MenuItem fx:id="MenuItemShowPosition" onAction="#MenuShowAllPosition" text="Должности" />
                  <MenuItem fx:id="MenuItemShowRegion" onAction="#MenuShowAllRegion" text="Регионы" />
                  <MenuItem fx:id="MenuItemShowClient" onAction="#MenuShowAllClient" text="Клиенты" />
+                 <MenuItem fx:id="MenuItemShowProduct" onAction="#MenuShowAllProduct" text="Отгруженные изделия" />
              </Menu>
       </MenuBar>
       </children>
