@@ -1,6 +1,7 @@
 package Models;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -17,7 +18,7 @@ public class Product {
     private String productName;
 
     @Column (name ="product_builddate")
-    private int productBuildDate;
+    private LocalDate productBuildDate;
 
     @Column (name = "partnumber")
     private int partNumber;
@@ -42,11 +43,11 @@ public class Product {
         this.productName = productName;
     }
 
-    public int getProductBuildDate() {
+    public LocalDate getProductBuildDate() {
         return productBuildDate;
     }
 
-    public void setProductBuildDate(int productBuildDate) {
+    public void setProductBuildDate(LocalDate productBuildDate) {
         this.productBuildDate = productBuildDate;
     }
 

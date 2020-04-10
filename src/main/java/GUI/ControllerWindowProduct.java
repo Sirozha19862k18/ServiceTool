@@ -1,15 +1,17 @@
 package GUI;
 
+import Models.Position;
 import Models.Product;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import service.EmployerService;
 import service.IncidentService;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 public class ControllerWindowProduct {
@@ -29,9 +31,21 @@ public class ControllerWindowProduct {
     @FXML
     TableColumn tableProductPartNumber;
 
+    @FXML
+    DatePicker datePickerProductBuildDate;
 
-    public void buttonAddProduct(ActionEvent actionEvent) {
-    }
+    @FXML
+    TextField textFieldProductPartNumber;
+
+    @FXML
+    TextField textFieldAddProductName;
+
+    @FXML
+    CheckBox checkBoxAddProduct;
+
+    @FXML
+    Button buttonAddProduct;
+
 
     public void showAllProduct(MouseEvent mouseEvent) {
         table.getItems().clear();
@@ -50,5 +64,34 @@ public class ControllerWindowProduct {
 
     public void deleteSelectedProduct(MouseEvent mouseEvent) {
 
+    }
+
+    public LocalDate datePickerSelectProductBuildDate() {
+        LocalDate today = LocalDate.now();
+        LocalDate productBuildDate = datePickerProductBuildDate.getValue();
+        if(productBuildDate==null || productBuildDate.isAfter(today)){
+           datePickerProductBuildDate.getEditor().clear();
+            System.out.println("Select Valid Date");
+        }
+        return productBuildDate;
+    }
+
+    public void checkBoxAddProductClicked(ActionEvent actionEvent) {
+        buttonAddProduct.setVisible(true);
+        checkBoxAddProduct.setSelected(false);
+    }
+
+    public void buttonAddProductSelect(ActionEvent actionEvent) {
+        buttonAddProduct.setVisible(false);
+        String productNameString = textFieldAddProductName.getText();
+        Integer productPartnumberString = Integer.valueOf(textFieldProductPartNumber.getText());
+        LocalDate datePickerProductBuildDate = datePickerSelectProductBuildDate();
+        Product product = new Product();
+        product.setProductName(productNameString);
+        product.setPartNumber(productPartnumberString);
+        product.setProductBuildDate(datePickerProductBuildDate);
+        System.out.println(product.getPartNumber()+" "+ product.getProductName()+ " "+ product.getProductBuildDate());
+        IncidentService incidentService = new IncidentService();
+        incidentService.addProduct(product);
     }
 }

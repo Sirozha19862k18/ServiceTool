@@ -17,28 +17,27 @@
                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
            </columnConstraints>
            <rowConstraints>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
            </rowConstraints>
             <children>
-               <TextField fx:id="textFieldAddProductName" GridPane.columnIndex="1">
+               <TextField fx:id="textFieldAddProductName" GridPane.columnIndex="1" GridPane.rowIndex="1">
                   <padding>
                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                   </padding></TextField>
-               <Label text="Наименование изделия (линии)" GridPane.halignment="RIGHT" />
-            <Button fx:id="buttonAddProduct" onAction="#buttonAddProduct" text="Добавить изделие" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-               <TextField fx:id="productBuildDate" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <Label text="Наименование изделия (линии)" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+               <TextField fx:id="textFieldProductPartNumber" GridPane.columnIndex="1" GridPane.rowIndex="3">
                   <padding>
                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                   </padding></TextField>
-               <TextField fx:id="productPartNumber" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                  <padding>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </padding></TextField>
-               <Label text="Дата ввода в эксплуатацию у  заказчика" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-               <Label text="Заводской номер" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+               <Label text="Дата ввода в эксплуатацию у  заказчика" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                <DatePicker fx:id="datePickerProductBuildDate" onAction="#datePickerSelectProductBuildDate" prefWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               <Label text="Заводской номер" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+               <CheckBox fx:id="checkBoxAddProduct" mnemonicParsing="false" onAction="#checkBoxAddProductClicked" text="Добавить изделие в справочник" GridPane.columnIndex="1" />
+               <Button fx:id="buttonAddProduct" mnemonicParsing="false" onAction="#buttonAddProductSelect" text="Добавить изделие" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             </children>
             <padding>
                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -69,4 +68,5 @@
       </VBox.margin>
 
     </ButtonBar>
+
 </VBox>

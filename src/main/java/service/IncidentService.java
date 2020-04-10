@@ -14,4 +14,6 @@ public class IncidentService {
     public List<Incident> showAllIncident() {return model.showAllIncident();}
 
     public List<Product> showAllProduct(){return model.showAllProduct();}
+
+    public void addProduct(Product product){model.addProduct(product);}
 }
