@@ -27,4 +27,13 @@ public class IncidentDAOImpl implements IncidentDAO {
         tx.commit();
         session.close();
     }
+
+    @Override
+    public void deleteProduct(Product product) {
+        Session session=HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Transaction tx = session.beginTransaction();
+        session.delete(product);
+        tx.commit();
+        session.close();
+    }
 }

@@ -9,4 +9,5 @@ public interface IncidentDAO {
     List<Incident> showAllIncident();
     List<Product> showAllProduct();
     void  addProduct(Product product);
+    void deleteProduct(Product product);
 }

@@ -1,17 +1,16 @@
 package GUI;
 
-import Models.Position;
+
 import Models.Product;
+import Models.Region;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import service.EmployerService;
+import service.ClientService;
 import service.IncidentService;
-
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 public class ControllerWindowProduct {
@@ -63,6 +62,14 @@ public class ControllerWindowProduct {
     }
 
     public void deleteSelectedProduct(MouseEvent mouseEvent) {
+        int id = Integer.valueOf(tableId.getCellObservableValue(table.getSelectionModel().getSelectedIndex()).getValue().toString());  //получание значения с ячейки id
+        String productName = String.valueOf(table.getSelectionModel().getSelectedItem());
+        System.out.println(id);
+        Product productToDelete = new Product();
+        productToDelete.setProductId(id);
+        productToDelete.setProductName(productName);
+        IncidentService incidentService = new IncidentService();
+        incidentService.deleteProduct(productToDelete);
 
     }
 
@@ -90,7 +97,7 @@ public class ControllerWindowProduct {
         product.setProductName(productNameString);
         product.setPartNumber(productPartnumberString);
         product.setProductBuildDate(datePickerProductBuildDate);
-        System.out.println(product.getPartNumber()+" "+ product.getProductName()+ " "+ product.getProductBuildDate());
+       // System.out.println(product.getPartNumber()+" "+ product.getProductName()+ " "+ product.getProductBuildDate());
         IncidentService incidentService = new IncidentService();
         incidentService.addProduct(product);
     }

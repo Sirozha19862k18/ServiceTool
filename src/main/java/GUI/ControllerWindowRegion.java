@@ -44,7 +44,7 @@ public class ControllerWindowRegion {
         tableRegion.setCellValueFactory(new PropertyValueFactory<Region, String>("regionName"));
         List<Region> reg = clientService.showAllRegions();
         for (int i = 0; i < reg.size(); i++) {
-            System.out.println(reg.get(i));
+          //  System.out.println(reg.get(i));
             table.getItems().add(reg.get(i));
         }
         table.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
@@ -53,7 +53,7 @@ public class ControllerWindowRegion {
     public void deleteSelectedRegion(MouseEvent mouseEvent) {
         int id = Integer.valueOf(tableId.getCellObservableValue(table.getSelectionModel().getSelectedIndex()).getValue().toString());  //получание значения с ячейки id
         String regionName = String.valueOf(table.getSelectionModel().getSelectedItem());
-        System.out.println(id);
+       // System.out.println(id);
         Region regionToDelete = new Region();
         regionToDelete.setRegionId(id);
         regionToDelete.setRegionName(regionName);

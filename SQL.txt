@@ -116,3 +116,7 @@ ORDER BY table_name DESC;
 /*FIX*/
 Alter table protocol
 ADD employer varchar(20) NOT NULL;
+
+/*FIX*/
+ALTER table product
+modify product_builddate DATETIME NOT NULL;

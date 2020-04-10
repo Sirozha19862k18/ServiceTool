@@ -16,4 +16,6 @@ public class IncidentService {
     public List<Product> showAllProduct(){return model.showAllProduct();}
 
     public void addProduct(Product product){model.addProduct(product);}
+
+    public void deleteProduct(Product product) {model.deleteProduct(product);}
 }
